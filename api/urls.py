@@ -1,11 +1,10 @@
-from django.conf.urls import url
-from django.urls import path
-from django.urls.conf import include, include
-from django.urls.resolvers import URLPattern
+from django.urls import path,include
 from rest_framework.authtoken import views
 from.views import home
 
 
 urlpatterns =[
-    path('',home, name='api.home')
+    path('',home, name='api.home'),
+    path('category/', include('api.category.urls'))
+
 ]
